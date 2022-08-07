@@ -234,14 +234,14 @@ body {
 .courses-previews-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
 }
 .course-template {
-  flex: 20%;
-  max-width: 20%;
+  flex: 23%;
+  max-width: 23%;
   color: #808488;
   font-size: 12px;
   cursor: pointer;
+  margin-right: 12px;
 }
 .course-template img {
   max-width: 100%;
@@ -262,6 +262,7 @@ body {
   color: #e59819;
   display: inline-block;
   margin-bottom: 4px;
+  font-weight: bolder;
 }
 .author {
   text-overflow: ellipsis;
@@ -269,6 +270,16 @@ body {
   display: -webkit-box;
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
+}
+
+/* Viewed courses */
+.viewed-courses {
+  margin: 42px 8px;
+  padding: 0 24px;
+}
+.viewed-courses h1 {
+  font-size: 2rem;
+  font-weight: 700;
 }
 
 /* Media Query */
