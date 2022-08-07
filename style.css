@@ -273,6 +273,7 @@ body {
   display: -webkit-box;
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
+  color: #808488;
 }
 
 /* Viewed courses */
@@ -286,6 +287,36 @@ body {
 .categories-container {
   display: flex;
   flex-wrap: wrap;
+}
+
+/* Featured Topics */
+.featured-topics-section {
+  background-color: #f7f9fa;
+  width: 100%;
+  padding: 32px;
+}
+.topics {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.topic {
+  flex: 23%;
+  max-width: 23%;
+  margin-right: 8px;
+}
+.topic a {
+  color: #5624d0;
+  text-decoration: underline;
+  font-size: 18px;
+  font-weight: bold;
+}
+.topic-students {
+  margin-bottom: 28px;
+  margin-top: 8px;
+}
+.topic a:hover {
+  color: #401ba2;
 }
 
 /* Media Query */
@@ -311,6 +342,10 @@ body {
   .courses-frame p,
   .courses-frame h2 {
     display: none;
+  }
+  .topics-btn {
+    display: block;
+    width: 100%;
   }
   .fa-shopping-cart {
     margin: 0;
@@ -352,6 +387,10 @@ body {
 
   .course-template h2 {
     font-size: 20px;
+  }
+  .topic {
+    flex: 45%;
+    max-width: 45%;
   }
 }
 @media screen and (max-width: 600px) {
