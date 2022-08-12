@@ -5,6 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="TopCategories.css" />
+    <link rel="stylesheet" href="ViewedCourses.css" />
+    <link rel="stylesheet" href="Navigationbar.css" />
+    <link rel="stylesheet" href="FeaturedTopics.css" />
+    <link rel="stylesheet" href="Courses.css" />
     <!-- font awesome -->
     <link
       rel="stylesheet"
@@ -25,10 +30,12 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <script src="index.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
     <title>Document</title>
   </head>
-  <body>
+  <body onload="fetchData()">
     <nav class="nav-bar">
       <div class="side-menu"><i class="fa fa-bars" aria-hidden="true"></i></div>
       <div class="logo">
@@ -37,7 +44,7 @@
         />
       </div>
       <a href="#">Categories</a>
-      <form class="search-bar-form">
+      <form class="search-bar-form" onsubmit="return onSearch(event)">
         <div class="search-bar">
           <i class="fa fa-search"></i>
           <input placeholder="Search for anything" />
@@ -94,84 +101,7 @@
             appeal to
           </p>
           <button class="explore-btn">Explore Python</button>
-          <div class="courses-previews-container">
-            <div class="course-template">
-              <img
-                src="https://img-c.udemycdn.com/course/240x135/394676_ce3d_5.jpg"
-              />
-              <div class="course-description">
-                <h4>Learn Pyhton: The Complete Python Programming Course</h4>
-                <div class="author">Avinash Jain, The Codex</div>
-                <div class="rating">
-                  4.4
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fas fa-star-half-alt"></i>
-                </div>
-                (2,906)
-                <h4>E£679.99</h4>
-              </div>
-            </div>
-            <div class="course-template">
-              <img
-                src="https://img-c.udemycdn.com/course/240x135/396876_cc92_7.jpg"
-              />
-              <div class="course-description">
-                <h4>Learning Pyhton for Data Analysis and Visualization</h4>
-                <div class="author">Jose Portilla</div>
-                <div class="rating">
-                  4.4
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fas fa-star-half-alt"></i>
-                </div>
-                (2,906)
-                <h4>E£679.99</h4>
-              </div>
-            </div>
-            <div class="course-template">
-              <img
-                src="https://img-c.udemycdn.com/course/240x135/405878_e5a0_3.jpg"
-              />
-              <div class="course-description">
-                <h4>Python for begginers - Learn Programming from scratch</h4>
-                <div class="author">Edwin Diaz, Coding Faculty Solutions</div>
-                <div class="rating">
-                  4.4
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fas fa-star-half-alt"></i>
-                </div>
-                (2,906)
-                <h4>E£679.99</h4>
-              </div>
-            </div>
-            <div class="course-template">
-              <img
-                src="https://img-c.udemycdn.com/course/240x135/449532_2aa9_7.jpg"
-              />
-              <div class="course-description">
-                <h4>Pyhton Beyond the Basics - Object-Oriented Programming</h4>
-                <div class="author">Infinite Skills</div>
-                <div class="rating">
-                  4.4
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fas fa-star-half-alt"></i>
-                </div>
-                (2,906)
-                <h4>E£679.99</h4>
-              </div>
-            </div>
-          </div>
+          <div id="tabs-courses" class="courses-previews-container"></div>
         </div>
       </section>
       <section class="padded-sections viewed-courses">
@@ -223,7 +153,7 @@
             />
             <div class="course-description">
               <h4>
-                React- - The Complete Guide (incl Hooks, React Router, Redux)
+                React - The Complete Guide (incl Hooks, React Router, Redux)
               </h4>
               <div class="author">
                 Academind by Maximilian Schwarzmuller, Maximilian Schwarzmuller

@@ -1,0 +1,40 @@
+.featured-topics-section {
+  background-color: #f7f9fa;
+  width: 100%;
+  padding: 32px;
+}
+.topics {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.topic {
+  flex: 23%;
+  max-width: 23%;
+  margin-right: 8px;
+}
+.topic a {
+  color: #5624d0;
+  text-decoration: underline;
+  font-size: 18px;
+  font-weight: bold;
+}
+.topic-students {
+  margin-bottom: 28px;
+  margin-top: 8px;
+}
+.topic a:hover {
+  color: #401ba2;
+}
+
+@media screen and (max-width: 800px) {
+  .topics-btn {
+    display: block;
+    width: 100%;
+  }
+
+  .topic {
+    flex: 45%;
+    max-width: 45%;
+  }
+}
