@@ -1,11 +1,22 @@
 let courses = [];
 let allCourses = [];
 let currentTab = 0;
+let map = [
+  "Python",
+  "Excel",
+  "Web Development",
+  "JavaScript",
+  "Data Science",
+  "AWS Certification",
+  "Drawing",
+];
 let changeActiveTab = (oldTab, newTab) => {
   let tabsContainer = document.getElementById("tabs-headers");
   let headers = tabsContainer.getElementsByTagName("h4");
   headers[oldTab].classList.remove("active-tab");
   headers[newTab].classList.add("active-tab");
+  let exlporeButton = document.getElementById("explore-btn-tab-name");
+  exlporeButton.textContent = `Explore ${map[newTab]}`;
 };
 let changeCurrentTab = (newTabNumber) => {
   if (newTabNumber === currentTab) {
@@ -16,15 +27,7 @@ let changeCurrentTab = (newTabNumber) => {
   courses = allCourses[currentTab];
   setViewedCourses(courses);
 };
-let map = [
-  "Python",
-  "Excel",
-  "Web Development",
-  "JavaScript",
-  "Data Science",
-  "AWS Certification",
-  "Drawing",
-];
+
 let fetchData = async () => {
   await axios
     .get("http://localhost:3000/courses")
