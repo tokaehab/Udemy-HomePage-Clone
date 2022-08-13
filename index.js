@@ -114,10 +114,15 @@ let onSearch = (event) => {
     setViewedCourses(courses);
     return;
   }
-  let filteredCourses = [];
+  let coursesToBeFiltered = [];
   for (let i = 0; i < allCourses.length; i++) {
-    filteredCourses.push(...allCourses[i]);
+    coursesToBeFiltered.push(...allCourses[i]);
   }
-  courses.filter((course) => course.title.toLowerCase().includes(searchValue));
-  setViewedCourses(filteredCourses);
+  let newCourses = [];
+  coursesToBeFiltered.forEach((course) => {
+    if (course.title.toLowerCase().includes(searchValue)) {
+      newCourses.push(course);
+    }
+  });
+  setViewedCourses(newCourses);
 };
