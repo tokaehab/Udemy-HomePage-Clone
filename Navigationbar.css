@@ -131,7 +131,7 @@
   background-color: #f7f8fa;
   justify-content: space-around;
 }
-.col {
+.coll {
   flex: 50%;
   max-width: 50%;
 }
@@ -183,7 +183,7 @@
   .main-card {
     flex-direction: column-reverse;
   }
-  .col {
+  .coll {
     flex: 100%;
     max-width: 100%;
   }

@@ -1,4 +1,30 @@
 let courses = [];
+let allCourses = [];
+let currentTab = 0;
+let changeActiveTab = (oldTab, newTab) => {
+  let tabsContainer = document.getElementById("tabs-headers");
+  let headers = tabsContainer.getElementsByTagName("h4");
+  headers[oldTab].classList.remove("active-tab");
+  headers[newTab].classList.add("active-tab");
+};
+let changeCurrentTab = (newTabNumber) => {
+  if (newTabNumber === currentTab) {
+    return;
+  }
+  changeActiveTab(currentTab, newTabNumber);
+  currentTab = newTabNumber;
+  courses = allCourses[currentTab];
+  setViewedCourses(courses);
+};
+let map = [
+  "Python",
+  "Excel",
+  "Web Development",
+  "JavaScript",
+  "Data Science",
+  "AWS Certification",
+  "Drawing",
+];
 let fetchData = async () => {
   await axios
     .get("http://localhost:3000/courses")
@@ -8,11 +34,14 @@ let fetchData = async () => {
     .catch((error) => {
       console.log("error", error);
     });
+  for (let i = 0; i < courses.length; i++) {
+    allCourses.push([...courses[i][map[i]]]);
+  }
+  courses = allCourses[currentTab];
   setViewedCourses(courses);
 };
 
 let addCourseToSlide = (course, slide) => {
-  console.log(course.title);
   let temp = document.createElement("div");
   temp.classList.add("course-template");
   temp.innerHTML = `
@@ -47,7 +76,6 @@ let setViewedCourses = (currentCourses) => {
   slide.classList.add("active");
 
   for (let course of currentCourses) {
-    console.log(course.title);
     coursesCntr = coursesCntr + 1;
     if (coursesCntr === maxLimit + 1) {
       coursesContainer.appendChild(slide);
@@ -56,7 +84,6 @@ let setViewedCourses = (currentCourses) => {
       coursesCntr = 1;
     }
     addCourseToSlide(course, slide);
-    console.log(slide);
   }
   if (coursesCntr >= 1) {
     coursesContainer.appendChild(slide);
@@ -84,8 +111,10 @@ let onSearch = (event) => {
     setViewedCourses(courses);
     return;
   }
-  let filteredCourses = courses.filter((course) =>
-    course.title.toLowerCase().includes(searchValue)
-  );
+  let filteredCourses = [];
+  for (let i = 0; i < allCourses.length; i++) {
+    filteredCourses.push(...allCourses[i]);
+  }
+  courses.filter((course) => course.title.toLowerCase().includes(searchValue));
   setViewedCourses(filteredCourses);
 };
