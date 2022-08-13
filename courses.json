@@ -32,16 +32,6 @@
     },
     {
       "id": 4,
-      "link": "https://www.udemy.com/course/learn-python/",
-      "title": "Learn Python: Python for Beginners",
-      "author": "Abrar Hussain",
-      "image": "https://img-c.udemycdn.com/course/240x135/426570_1b91_3.jpg",
-      "price": "319.99",
-      "rating": 4.3,
-      "people": "2,773"
-    },
-    {
-      "id": 5,
       "link": "https://www.udemy.com/course/python-beyond-the-basics-object-oriented-programming/",
       "title": "Python Beyond the Basics - Object-Oriented Programming",
       "author": "Infinite Skills",
@@ -51,7 +41,7 @@
       "people": "2,930"
     },
     {
-      "id": 6,
+      "id": 5,
       "link": "https://www.udemy.com/course/selenium-webdriver-and-python/",
       "title": "Python From Scratch & Selenium WebDriver QA Automation 2022",
       "author": "Admas Kinfu",
@@ -61,7 +51,7 @@
       "people": "1,813"
     },
     {
-      "id": 7,
+      "id": 6,
       "link": "https://www.udemy.com/course/teach-your-kids-to-code/",
       "title": "Teach Your Kids to Code: Learn to Program Python at Any Age!",
       "author": "Bryson Payne",
@@ -71,7 +61,7 @@
       "people": "8,809"
     },
     {
-      "id": 8,
+      "id": 7,
       "link": "https://www.udemy.com/course/python-for-data-structures-algorithms-and-interviews/",
       "title": "Python for Data Structures, Algorithms, and Interviews!",
       "author": "Jose Portilla",
@@ -81,7 +71,7 @@
       "people": "10.701"
     },
     {
-      "id": 9,
+      "id": 8,
       "link": "https://www.udemy.com/course/automate/",
       "title": "Automate the Boring Stuff with Python Programming",
       "author": "Al Sweigart",
@@ -91,7 +81,7 @@
       "people": "101,703"
     },
     {
-      "id": 10,
+      "id": 9,
       "link": "https://www.udemy.com/course/complete-python-bootcamp/",
       "title": "2022 Complete Python Bootcamp From Zero to Hero in Python",
       "author": "Jose Portilla",
@@ -101,7 +91,7 @@
       "people": "427,994"
     },
     {
-      "id": 11,
+      "id": 10,
       "link": "https://www.udemy.com/course/react-the-complete-guide-incl-redux/",
       "title": "React - The Complete Guide (incl Hooks, React Router, Redux)",
       "author": "Academind by Maximilian Schwarzmuller, Maximilian Schwarzmuller",

@@ -78,6 +78,7 @@
   cursor: pointer;
   margin-right: 12px;
   margin-bottom: 12px;
+  display: inline-block;
 }
 .course-template img {
   max-width: 100%;
@@ -108,6 +109,28 @@
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
   color: #808488;
+}
+.carousel-control-prev {
+  opacity: 1;
+  left: -38px;
+  margin-left: 8px;
+  width: auto;
+  display: block;
+}
+
+.carousel-control-next,
+.carousel-control-prev {
+  width: auto;
+  height: 50px;
+  margin: auto;
+}
+.carousel-control-prev-icon {
+  background-color: #1c1d1f;
+  border-radius: 8px;
+}
+.carousel-control-next-icon {
+  background-color: #1c1d1f;
+  border-radius: 8px;
 }
 
 @media screen and (max-width: 800px) {
