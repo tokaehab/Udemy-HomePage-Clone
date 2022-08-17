@@ -10,6 +10,8 @@ let map = [
   "AWS Certification",
   "Drawing",
 ];
+
+// Add "active-tab" class to the current tab
 let changeActiveTab = (oldTab, newTab) => {
   let tabsContainer = document.getElementById("tabs-headers");
   let headers = tabsContainer.getElementsByTagName("h4");
@@ -18,6 +20,8 @@ let changeActiveTab = (oldTab, newTab) => {
   let exlporeButton = document.getElementById("explore-btn-tab-name");
   exlporeButton.textContent = `Explore ${map[newTab]}`;
 };
+
+// Change the selected tab
 let changeCurrentTab = (newTabNumber) => {
   if (newTabNumber === currentTab) {
     return;
@@ -92,8 +96,9 @@ let setViewedCourses = (currentCourses) => {
     coursesContainer.appendChild(slide);
   }
 
-  let buttons = document.createElement("div");
-  buttons.innerHTML = `
+  coursesContainer.insertAdjacentHTML(
+    "beforeend",
+    `
   <button class="carousel-control-prev" style="width:auto; bottom:50px;" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Previous</span>
@@ -102,8 +107,8 @@ let setViewedCourses = (currentCourses) => {
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Next</span>
   </button>
-  `;
-  coursesContainer.appendChild(buttons);
+  `
+  );
 };
 
 let onSearch = (event) => {
