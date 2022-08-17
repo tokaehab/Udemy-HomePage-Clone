@@ -9,6 +9,10 @@
   font-weight: 400;
   margin: 8px 0 0 0;
 }
+#tabs-headers {
+  overflow-x: auto;
+  display: flex;
+}
 
 .tab {
   display: inline-flex;
@@ -131,6 +135,17 @@
 .carousel-control-next-icon {
   background-color: #1c1d1f;
   border-radius: 8px;
+}
+.carousel-item.active {
+  width: 95%;
+  margin-right: 0;
+  margin-left: 4%;
+}
+
+.carousel-inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @media screen and (max-width: 800px) {
